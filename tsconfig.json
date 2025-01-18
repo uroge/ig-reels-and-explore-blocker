@@ -4,7 +4,7 @@
     "target": "es2016",
 
     /* Modules */
-    "module": "NodeNext",
+    "module": "ES2015",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
 
@@ -16,6 +16,6 @@
     "rootDir": "./",
     "outDir": "./dist"
   },
-  "include": ["src/**/*"],
+  "include": ["./", "index.ts"],
   "exclude": ["node_modules", "dist"]
 }

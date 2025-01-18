@@ -9,8 +9,14 @@
     "128": "images/icon-128.png"
   },
   "description": "This extension will help you to be more productive on Instagram",
-  "background": {
-    "service_worker": "src/background/index.js"
-  },
-  "permissions": ["activeTab", "scripting"]
+  "permissions": ["activeTab", "scripting"],
+  "content_scripts": [
+    {
+      "js": ["scripts/index.js"],
+      "matches": [
+        "https://instagram.com/*",
+        "https://www.instagram.com/*"
+      ]
+    }
+  ]
 }

@@ -12,14 +12,16 @@ The IG Productivity extension is a Google Chrome extension designed to enhance y
 
 ## Installation
 
-1. Download the extension package from the [releases page](#).
-2. Open Google Chrome and navigate to `chrome://extensions/`.
-3. Enable "Developer mode" by toggling the switch in the top right corner.
-4. Click on "Load unpacked" and select the downloaded extension package.
+1. Clone this repo
+2. Run yarn build
+3. Open Google Chrome and navigate to `chrome://extensions/`.
+4. Enable "Developer mode" by toggling the switch in the top right corner.
+5. Click on "Load unpacked" and select the downloaded extension package.
+6. Load dist folder
 
 ## Usage
 
-Once installed, the extension will automatically remove the Reels and Explore sidebar links and disable navigation to any URL containing `/reels`. You can browse Instagram with fewer distractions and focus on what matters.
+Once installed, the extension will automatically remove the Reels and Explore sidebar links and disable navigation to any URL containing `/reels` or `/explore`. You can browse Instagram with fewer distractions and focus on what matters.
 
 ## Contributing
 

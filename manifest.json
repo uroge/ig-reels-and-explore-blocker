@@ -9,9 +9,6 @@
     "128": "images/icon-128.png"
   },
   "description": "This extension will help you to be more productive on Instagram",
-  "background": {
-    "service_worker": "service-worker.js"
-  },
   "content_scripts": [
     {
       "js": ["scripts/content.ts"],

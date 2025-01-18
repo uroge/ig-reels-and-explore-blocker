@@ -9,10 +9,7 @@
     "128": "images/icon-128.png"
   },
   "description": "This extension will help you to be more productive on Instagram",
-  "content_scripts": [
-    {
-      "js": ["scripts/content.ts"],
-      "matches": ["https://instagram.com/*"]
-    }
-  ]
+  "background": {
+    "service_worker": "src/background/index.js"
+  }
 }

@@ -1,8 +1,8 @@
-# Instagram Productivity Extension
+# IG Productivity extension
 
 ## Overview
 
-The Instagram Productivity Extension is a Google Chrome extension designed to enhance your productivity by removing distracting features from the Instagram app. This extension removes the Reels and Explore sidebar links and disables navigation to any URL that contains `/reels` or the extension page.
+The IG Productivity extension is a Google Chrome extension designed to enhance your productivity by removing distracting features from the Instagram app. This extension removes the Reels and Explore sidebar links and disables navigation to any URL that contains `/reels` or the extension page.
 
 ## Features
 

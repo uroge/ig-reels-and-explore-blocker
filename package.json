@@ -8,7 +8,7 @@
   "scripts": {
     "clean": "rm -rf dist",
     "compile": "npx tsc",
-    "copy-assets": "rsync -av --exclude='tsconfig.json' --exclude='src' --exclude='dist' ./ dist/",
+    "copy-assets": "rsync -av --exclude='tsconfig.json' --exclude='src' --exclude='dist' --exclude='.gitignore' ./ dist/",
     "build": "yarn clean && yarn compile && yarn copy-assets"
   },
   "keywords": [],

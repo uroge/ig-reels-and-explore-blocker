@@ -11,5 +11,6 @@
   "description": "This extension will help you to be more productive on Instagram",
   "background": {
     "service_worker": "src/background/index.js"
-  }
+  },
+  "permissions": ["activeTab", "scripting"]
 }

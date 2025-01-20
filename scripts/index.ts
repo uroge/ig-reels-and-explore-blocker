@@ -5,7 +5,7 @@
     link.style.setProperty('display', 'none', 'important');
   }
 
-  function handleRemoveReelsAndExplore() {
+  function handleRemoveReelsAndExploreLinks() {
     const reelsLinks = document.querySelectorAll('a[href*="reels"]');
     const exploreLinks = document.querySelectorAll(
       'a[href*="explore"]'
@@ -22,32 +22,49 @@
     [...reelsLinksArray, ...exploreLinksArray].forEach(removeLink);
   }
 
-  function handleURLChange() {
+  function handleBlockReelsAndExploreNavigation() {
     const currentURL = window.location.href;
 
-    if (currentURL !== lastUrl) {
+    const isReelsOrExplore =
+      currentURL.includes('reels') || currentURL.includes('explore');
+
+    if (currentURL !== lastUrl || isReelsOrExplore) {
       lastUrl = currentURL;
-      if (
-        currentURL.includes('reels') ||
-        currentURL.includes('explore')
-      ) {
+      if (isReelsOrExplore) {
         window.history.back();
       }
     }
   }
 
   // Initial setup
-  handleRemoveReelsAndExplore();
-  handleURLChange();
+  handleRemoveReelsAndExploreLinks();
 
   // React to changes
   const observer = new MutationObserver(() => {
-    handleRemoveReelsAndExplore();
-    handleURLChange();
+    handleRemoveReelsAndExploreLinks();
+    handleBlockReelsAndExploreNavigation();
   });
 
   observer.observe(document.body, {
     childList: true,
     subtree: true,
   });
+
+  window.addEventListener(
+    'popstate',
+    handleBlockReelsAndExploreNavigation
+  );
+
+  const originalPushState = history.pushState;
+  const originalReplaceState = history.replaceState;
+
+  history.pushState = function (...args) {
+    originalPushState.apply(this, args);
+    handleBlockReelsAndExploreNavigation();
+  };
+
+  history.replaceState = function (...args) {
+    originalReplaceState.apply(this, args);
+    handleBlockReelsAndExploreNavigation();
+  };
 })();
